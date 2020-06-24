@@ -8,13 +8,9 @@ PACKAGE_ORG=mrcide
 # doesn't work
 if [ "$BUILDKITE" = "true" ]; then
     GIT_SHA=${BUILDKITE_COMMIT:0:7}
-else
-    GIT_SHA=$(git -C "$PACKAGE_ROOT" rev-parse --short=7 HEAD)
-fi
-
-if [ "$BUILDKITE" = "true" ]; then
     GIT_BRANCH=$BUILDKITE_BRANCH
 else
+    GIT_SHA=$(git -C "$PACKAGE_ROOT" rev-parse --short=7 HEAD)
     GIT_BRANCH=$(git -C "$PACKAGE_ROOT" symbolic-ref --short HEAD)
 fi
 

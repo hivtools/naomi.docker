@@ -1,6 +1,6 @@
-FROM rocker/r-ver:3.6.0
+FROM rocker/r-ver:4.0.0
 
-RUN apt-get update && apt-get -y install \
+RUN apt-get update && apt-get -y install --no-install-recommends \
         libcurl4-openssl-dev \
         libgdal-dev \
         libprotobuf-dev \
@@ -12,10 +12,12 @@ RUN apt-get update && apt-get -y install \
         texinfo \
         texlive \
         texlive-fonts-extra \
-        zlib1g-dev
+        zlib1g-dev \
+        && apt-get clean \
+        && rm -rf /var/lib/apt/lists/*
 
 COPY docker/bin /usr/local/bin/
-RUN sed  -i'' '/mran.microsoft.com/d' /usr/local/lib/R/etc/Rprofile.site
+COPY docker/Rprofile.site /usr/local/lib/R/etc/Rprofile.site
 
 RUN install_packages --repo=https://mrc-ide.github.io/drat \
     DiagrammeR \
@@ -56,10 +58,6 @@ RUN install_packages --repo=https://mrc-ide.github.io/drat \
     zip \
     zoo
 
-RUN install_packages --repo=https://inla.r-inla-download.org/R/stable \
-    INLA
-
 RUN install_packages remotes && install_remote \
     bergant/datamodelr \
-    mrc-ide/eppasm \
-    reside-ic/traduire
+    mrc-ide/eppasm

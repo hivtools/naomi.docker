@@ -7,4 +7,4 @@ HERE=$(dirname $0)
 [ ! -z $(docker images -q $TAG_SHA) ] || docker pull $TAG_SHA
 
 echo "*** starting container"
-docker run --rm -d $TAG_SHA
+docker run --rm $TAG_SHA
