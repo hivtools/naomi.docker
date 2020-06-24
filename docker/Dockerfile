@@ -16,6 +16,7 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
 
+COPY docker/bin /usr/local/bin/
 COPY docker/Rprofile.site /usr/local/lib/R/etc/Rprofile.site
 
 RUN install_packages --repo=https://mrc-ide.github.io/drat \
