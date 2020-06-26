@@ -50,7 +50,6 @@ RUN install_packages --repo=https://mrc-ide.github.io/drat \
     testthat \
     tidyr \
     tidyverse \
-    tmbstan \
     traduire \
     viridis \
     withr \
