@@ -55,7 +55,6 @@ RUN install_packages --repo=https://mrc-ide.github.io/drat \
         remotes \
         rlang \
         rmarkdown \
-        rrq \
         scales \
         sf \
         spdep \
@@ -73,4 +72,6 @@ RUN install_packages --repo=https://mrc-ide.github.io/drat \
 
 RUN install_packages remotes && install_remote \
         bergant/datamodelr \
-        mrc-ide/eppasm
+        mrc-ide/eppasm \
+        mrc-ide/rrq
+
