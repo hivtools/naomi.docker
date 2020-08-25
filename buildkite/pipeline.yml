@@ -13,3 +13,7 @@ steps:
     command: docker/push
 
   - wait
+
+notify:
+  - email: "r.ashton@imperial.ac.uk"
+    if: build.state != "passed"
