@@ -7,6 +7,7 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
         libjq-dev \
         libprotobuf-dev \
         libssh-dev \
+        libsodium-dev \
         libudunits2-dev \
         libv8-dev \
         libxml2-dev \
