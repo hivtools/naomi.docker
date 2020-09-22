@@ -48,7 +48,6 @@ RUN install_packages --repo=https://mrc-ide.github.io/drat \
         methods \
         mockery \
         mvtnorm \
-        pkgapi \
         plumber \
         ps \
         rdhs \
@@ -74,5 +73,6 @@ RUN install_packages --repo=https://mrc-ide.github.io/drat \
 RUN install_packages remotes && install_remote \
         bergant/datamodelr \
         mrc-ide/eppasm \
+        reside-ic/pkgapi \
         mrc-ide/rrq
 
