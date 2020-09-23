@@ -15,6 +15,7 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
         texinfo \
         texlive \
         texlive-fonts-extra \
+        texlive-latex-extra \
         zlib1g-dev \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
