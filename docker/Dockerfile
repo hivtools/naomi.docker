@@ -39,6 +39,7 @@ RUN install_packages --repo=https://mrc-ide.github.io/drat \
         ggplot2 \
         glue \
         gridExtra \
+        gt \
         heartbeatr \
         here \
         jsonlite \
