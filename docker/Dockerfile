@@ -1,6 +1,7 @@
 FROM rocker/r-ver:4.0.2
 
 RUN apt-get update && apt-get -y install --no-install-recommends \
+        cabal-install \
         libcurl4-openssl-dev \
         libgdal-dev \
         libhiredis-dev \
@@ -19,6 +20,9 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
         zlib1g-dev \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
+        
+## Install pandoc using cabal
+RUN cabal install pandoc
 
 COPY docker/bin /usr/local/bin/
 COPY docker/Rprofile.site /usr/local/lib/R/etc/Rprofile.site
