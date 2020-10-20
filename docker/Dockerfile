@@ -22,7 +22,7 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
         && rm -rf /var/lib/apt/lists/*
         
 ## Install pandoc using cabal
-RUN cabal install pandoc
+RUN cabal update && cabal install --global pandoc
 
 COPY docker/bin /usr/local/bin/
 COPY docker/Rprofile.site /usr/local/lib/R/etc/Rprofile.site
