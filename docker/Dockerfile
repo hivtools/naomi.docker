@@ -1,7 +1,8 @@
 FROM rocker/r-ver:4.0.2
 
+ENV PANDOC_VER=2.2.2.1
+
 RUN apt-get update && apt-get -y install --no-install-recommends \
-        cabal-install \
         libcurl4-openssl-dev \
         libgdal-dev \
         libhiredis-dev \
@@ -17,12 +18,15 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
         texlive \
         texlive-fonts-extra \
         texlive-latex-extra \
+        wget \
         zlib1g-dev \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
         
-## Install pandoc using cabal
-RUN cabal update && cabal install --global pandoc
+## Install pandoc
+RUN cd /opt && wget https://github.com/jgm/pandoc/releases/download/$PANDOC_VER/pandoc-$PANDOC_VER-1-amd64.deb \
+    && dpkg -i pandoc-$PANDOC_VER-1-amd64.deb \
+    && apt-get -y autoremove && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /opt/*
 
 COPY docker/bin /usr/local/bin/
 COPY docker/Rprofile.site /usr/local/lib/R/etc/Rprofile.site
