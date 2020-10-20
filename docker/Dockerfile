@@ -1,6 +1,6 @@
 FROM rocker/r-ver:4.0.2
 
-ENV PANDOC_VER=2.2.2.1
+ENV PANDOC_VER=2.11.0.2
 
 RUN apt-get update && apt-get -y install --no-install-recommends \
         libcurl4-openssl-dev \
