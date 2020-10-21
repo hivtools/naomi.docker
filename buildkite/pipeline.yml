@@ -17,3 +17,5 @@ steps:
 notify:
   - email: "r.ashton@imperial.ac.uk"
     if: build.state != "passed"
+  - email: "765005d7.groups.imperial.ac.uk@emea.teams.ms"
+    if: build.state != "passed"
