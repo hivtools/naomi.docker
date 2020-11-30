@@ -83,6 +83,7 @@ RUN install_packages --repo=https://mrc-ide.github.io/drat \
 RUN install_packages remotes && install_remote \
         bergant/datamodelr \
         mrc-ide/eppasm \
+        mrc-ide/first90release \
         reside-ic/porcelain \
         mrc-ide/rrq
 
