@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.0.2
+FROM rocker/r-ver:4.0.3
 
 ENV PANDOC_VER=2.11.0.2
 
