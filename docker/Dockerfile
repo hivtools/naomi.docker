@@ -60,7 +60,6 @@ RUN install_packages --repo=https://mrc-ide.github.io/drat \
         mvtnorm \
         plumber \
         ps \
-        rdhs \
         readr \
         remotes \
         rlang \
