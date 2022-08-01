@@ -31,6 +31,9 @@ RUN cd /opt && wget https://github.com/jgm/pandoc/releases/download/$PANDOC_VER/
 COPY docker/bin /usr/local/bin/
 COPY docker/Rprofile.site /usr/local/lib/R/etc/Rprofile.site
 
+RUN install_packages --repo=https://rspatial.r-universe.dev \
+        terra
+
 RUN install_packages --repo=https://mrc-ide.github.io/drat \
         DiagrammeR \
         Matrix \
