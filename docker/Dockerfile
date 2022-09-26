@@ -31,7 +31,7 @@ RUN cd /opt && wget https://github.com/jgm/pandoc/releases/download/$PANDOC_VER/
 COPY docker/bin /usr/local/bin/
 COPY docker/Rprofile.site /usr/local/lib/R/etc/Rprofile.site
 
-RUN install_packages --repo=https://mrc-ide.github.io/drat \
+RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         DiagrammeR \
         Matrix \
         R6 \
@@ -42,6 +42,8 @@ RUN install_packages --repo=https://mrc-ide.github.io/drat \
         data.tree \
         docopt \
         dplyr \
+        eppasm \
+        first90 \
         forcats \
         geojsonio \
         ggplot2 \
@@ -58,12 +60,15 @@ RUN install_packages --repo=https://mrc-ide.github.io/drat \
         methods \
         mockery \
         mvtnorm \
+        naomi.options \
         plumber \
+        porcelain \
         ps \
         readr \
         remotes \
         rlang \
         rmarkdown \
+        rrq \
         scales \
         sf \
         spdep \
@@ -80,9 +85,5 @@ RUN install_packages --repo=https://mrc-ide.github.io/drat \
         zoo
 
 RUN install_packages remotes && install_remote \
-        bergant/datamodelr \
-        mrc-ide/eppasm \
-        mrc-ide/first90release \
-        reside-ic/porcelain \
-        mrc-ide/rrq
+        bergant/datamodelr
 
