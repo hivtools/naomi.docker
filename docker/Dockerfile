@@ -6,6 +6,7 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
         libcurl4-openssl-dev \
         libgdal-dev \
         libhiredis-dev \
+        libicu-dev \
         libjq-dev \
         libprotobuf-dev \
         libssh-dev \
