@@ -14,7 +14,6 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
         libv8-dev \
         libxml2-dev \
         protobuf-compiler \
-        r-cran-stringi \
         texinfo \
         texlive \
         texlive-fonts-extra \
@@ -88,4 +87,3 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
 
 RUN install_packages remotes && install_remote \
         bergant/datamodelr
-
