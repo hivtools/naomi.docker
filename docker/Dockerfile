@@ -65,6 +65,7 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         plumber \
         porcelain \
         ps \
+        qs \
         readr \
         remotes \
         rlang \
