@@ -32,6 +32,7 @@ COPY docker/bin /usr/local/bin/
 COPY docker/Rprofile.site /usr/local/lib/R/etc/Rprofile.site
 
 RUN install_packages --repo=https://mrc-ide.r-universe.dev \
+        DBI \
         DiagrammeR \
         Matrix \
         R6 \
@@ -42,6 +43,7 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         data.tree \
         docopt \
         dplyr \
+        duckdb \
         eppasm \
         first90 \
         forcats \
