@@ -84,6 +84,7 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         traduire \
         viridis \
         withr \
+        writexl \
         yaml \
         zip \
         zoo
