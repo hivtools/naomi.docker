@@ -63,6 +63,7 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         mockery \
         mvtnorm \
         naomi.options \
+        naomi.resources \
         plotly \
         plumber \
         porcelain \
