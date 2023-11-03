@@ -43,7 +43,6 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         data.tree \
         docopt \
         dplyr \
-        duckdb \
         eppasm \
         first90 \
         forcats \
@@ -85,9 +84,11 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         traduire \
         viridis \
         withr \
+        writexl \
         yaml \
         zip \
         zoo
 
 RUN install_packages remotes && install_remote \
-        bergant/datamodelr
+        bergant/datamodelr \
+	duckdb/duckdb-r@v0.9.1
