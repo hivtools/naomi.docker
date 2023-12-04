@@ -91,4 +91,5 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
 
 RUN install_packages remotes && install_remote \
         bergant/datamodelr \
-	duckdb/duckdb-r@v0.9.1
+	duckdb/duckdb-r@v0.9.1 \
+        mrc-ide/naomi.options 
