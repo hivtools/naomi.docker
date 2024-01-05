@@ -63,6 +63,7 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         mvtnorm \
         naomi.options \
         naomi.resources \
+	openxlsx \
         plotly \
         plumber \
         porcelain \
