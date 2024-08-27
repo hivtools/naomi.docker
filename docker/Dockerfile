@@ -31,6 +31,9 @@ RUN cd /opt && wget https://github.com/jgm/pandoc/releases/download/$PANDOC_VER/
 COPY docker/bin /usr/local/bin/
 COPY docker/Rprofile.site /usr/local/lib/R/etc/Rprofile.site
 
+RUN install_packages --repo=https://duckdb.r-universe.dev \
+        duckdb
+
 RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         DBI \
         DiagrammeR \
@@ -63,7 +66,7 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         mvtnorm \
         naomi.options \
         naomi.resources \
-	openxlsx \
+	    openxlsx \
         plotly \
         plumber \
         porcelain \
@@ -91,6 +94,4 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         zoo
 
 RUN install_packages remotes && install_remote \
-        bergant/datamodelr \
-	duckdb/duckdb-r@v0.9.1 \
-        mrc-ide/naomi.options 
+        bergant/datamodelr
