@@ -10,7 +10,7 @@ on:
 
 env:
   TAG_IMAGE: mrcide/naomi-base
-  TAG_IMAGE_GHCR: mrc-ide/naomi-base
+  TAG_IMAGE_GHCR: hivtools/naomi-base
 
 jobs:
   docker:
