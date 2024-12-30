@@ -23,7 +23,7 @@ RUN apt-get update && apt-get -y install --no-install-recommends \
         zlib1g-dev \
         && apt-get clean \
         && rm -rf /var/lib/apt/lists/*
-        
+
 ## Install pandoc
 RUN cd /opt && wget https://github.com/jgm/pandoc/releases/download/$PANDOC_VER/pandoc-$PANDOC_VER-1-amd64.deb \
     && dpkg -i pandoc-$PANDOC_VER-1-amd64.deb \
@@ -37,13 +37,13 @@ RUN install_packages --repo=https://duckdb.r-universe.dev \
 
 RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         DBI \
-        DiagrammeR \
         Matrix \
         R6 \
         RcppEigen \
         TMB \
         assertthat \
-        covr \
+        brio \
+        callr \
         data.tree \
         docopt \
         dplyr \
@@ -53,46 +53,34 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         geojsonio \
         ggplot2 \
         glue \
-        gridExtra \
         gt \
-        heartbeatr \
-        here \
         jsonlite \
-        jsonvalidate \
         knitr \
-        lubridate \
+        lgr \
         magrittr \
         methods \
-        mockery \
         mvtnorm \
         naomi.options \
-        naomi.resources \
-	    openxlsx \
+        openxlsx \
         plotly \
         plumber \
         porcelain \
-        ps \
         qs \
         readr \
         remotes \
         rlang \
         rmarkdown \
         rrq \
-        scales \
         sf \
         spdep \
         specio \
-        survey \
-        testthat \
         tidyr \
-        tidyverse \
         traduire \
-        viridis \
         withr \
         writexl \
         yaml \
         zip \
         zoo
 
-RUN install_packages remotes && install_remote \
-        bergant/datamodelr
+RUN apt-get -y install --no-install-recommends binutils \
+    && find / -type f -name "*.so" -exec strip --strip-all {} + || true
