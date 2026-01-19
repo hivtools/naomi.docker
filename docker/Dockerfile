@@ -65,7 +65,6 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         plotly \
         plumber \
         porcelain \
-        qs \
         readr \
         remotes \
         rlang \
@@ -81,6 +80,9 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         yaml \
         zip \
         zoo
+
+RUN install_remote \
+        qsbase/qs
 
 RUN apt-get -y install --no-install-recommends binutils \
     && find / -type f -name "*.so" -exec strip --strip-all {} + || true
