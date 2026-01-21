@@ -65,6 +65,7 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         plotly \
         plumber \
         porcelain \
+	qs2 \
         readr \
         remotes \
         rlang \
