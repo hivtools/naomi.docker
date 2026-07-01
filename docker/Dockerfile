@@ -82,8 +82,5 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         zip \
         zoo
 
-RUN install_remote \
-        qsbase/qs
-
 RUN apt-get -y install --no-install-recommends binutils \
     && find / -type f -name "*.so" -exec strip --strip-all {} + || true
