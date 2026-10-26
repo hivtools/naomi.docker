@@ -35,6 +35,9 @@ COPY docker/Rprofile.site /usr/local/lib/R/etc/Rprofile.site
 RUN install_packages --repo=https://duckdb.r-universe.dev \
         duckdb
 
+RUN install_packages --repo=https://coolbutuseless.r-unvierse.dev \
+        yyjsonr
+
 RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         DBI \
         Matrix \
