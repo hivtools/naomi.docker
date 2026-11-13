@@ -30,12 +30,11 @@ RUN cd /opt && wget https://github.com/jgm/pandoc/releases/download/$PANDOC_VER/
     && apt-get -y autoremove && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /opt/*
 
 COPY docker/bin /usr/local/bin/
-COPY docker/Rprofile.site /usr/local/lib/R/etc/Rprofile.site
 
 RUN install_packages --repo=https://duckdb.r-universe.dev \
         duckdb
 
-RUN install_packages --repo=https://coolbutuseless.r-unvierse.dev \
+RUN install_packages --repo=https://coolbutuseless.r-universe.dev \
         yyjsonr
 
 RUN install_packages --repo=https://mrc-ide.r-universe.dev \
@@ -68,7 +67,7 @@ RUN install_packages --repo=https://mrc-ide.r-universe.dev \
         plotly \
         plumber \
         porcelain \
-	qs2 \
+        qs2 \
         readr \
         remotes \
         rlang \
